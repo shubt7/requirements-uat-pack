@@ -1,0 +1,13 @@
+test_id,acceptance_criteria,scenario,steps,expected_result,status,defect_id
+UAT-001,AC-01.1,Category return rate for August,Run report for Aug 2026; compare each category to the reference workbook,Returned units / net units matches reference to one decimal place,Pass,
+UAT-002,AC-01.2,Return counts in month received,Use a July sale returned on 4 Aug; run August and July reports,Return appears in August only,Pass,
+UAT-003,AC-01.3,Cancelled order excluded,Use an order cancelled before shipment; run report,Order absent from net units sold,Fail,DEF-001
+UAT-004,AC-02.1,Store with no returns shows zero,Pick a store with no returns in the test month,Store shows 0.0% and remains in list,Pass,
+UAT-005,AC-02.2,Unknown store code goes to exceptions,Insert a return with store code ZZ99; run report,Row on exception list; not in store totals,Pass,
+UAT-006,AC-03.1,Exchange not counted as return,Use an exchange transaction; run report,Exchange not in returned units,Pass,
+UAT-007,AC-03.2,Refund and credit note counted,Use one refund and one credit note; run report,Both counted in returned units,Pass,
+UAT-008,AC-04.1,Blank reason shown as Unspecified,Use a return with no reason code; run report,Row under Unspecified and in totals,Fail,DEF-002
+UAT-009,AC-04.2,Every return maps to one reason group,Run report; count returns by group and compare to total,Group counts sum to total returns,Not run,
+UAT-010,AC-05.1,Negative quantity on exception list,Insert return with quantity -2; run report,Row on exception list,Not run,
+UAT-011,AC-05.2,Exception count shown in header,Run report with at least one exception; check header,Header shows the exception count,Not run,
+UAT-012,BR-04,Return rate rounded to one decimal place,Use an example of 12.345%; check display,Displays 12.3%,Pass,

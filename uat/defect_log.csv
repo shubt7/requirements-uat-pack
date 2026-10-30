@@ -1,0 +1,3 @@
+defect_id,linked_test,severity,summary,steps_to_reproduce,expected,actual,status,owner
+DEF-001,UAT-003,High,Cancelled-before-shipment orders included in net units sold,Run August report with a cancelled order,Order excluded (BR-03),Order counted in net units,Open,Data Engineering
+DEF-002,UAT-008,Medium,Blank return reason dropped from totals,Run report with a return that has no reason code,Shown as Unspecified and included (BR-05),Row missing from reason table,Open,Data Engineering
